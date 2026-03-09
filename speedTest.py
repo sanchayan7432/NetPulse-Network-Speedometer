@@ -92,17 +92,21 @@ if wifi_signal:
 
 def measure_jitter():
 
-    samples = []
+    delays = []
 
-    for _ in range(6):
-        delay = ping("8.8.8.8")
-        if delay:
-            samples.append(delay*1000)
+    for _ in range(5):
+        start = time.time()
+        try:
+            requests.get("https://www.google.com", timeout=3)
+            delay = (time.time() - start) * 1000
+            delays.append(delay)
+        except:
+            pass
 
-    if len(samples) > 1:
-        return round(statistics.stdev(samples),2)
-
-    return 0
+    if len(delays) > 1:
+        return statistics.stdev(delays)
+    else:
+        return 0
 
 # ---------------- PACKET LOSS ---------------- #
 
@@ -237,6 +241,7 @@ if st.button("🚀 Run Speed Test"):
 if st.button("🔄 Restart Test"):
 
     st.rerun()
+
 
 
 
