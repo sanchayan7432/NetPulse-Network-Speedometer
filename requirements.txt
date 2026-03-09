@@ -1,0 +1,5 @@
+speedtest-cli
+psutil
+requests
+matplotlib
+ping3
