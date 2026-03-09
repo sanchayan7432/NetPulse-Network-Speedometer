@@ -87,23 +87,23 @@ wifi_signal = get_wifi_strength()
 if wifi_signal:
     st.progress(wifi_signal)
     st.write(f"📶 WiFi Signal Strength: **{wifi_signal}%**")
-"""
+
 # ---------------- JITTER ---------------- #
 
-def measure_jitter():
+#def measure_jitter():
 
-    samples = []
+    #samples = []
 
-    for _ in range(6):
-        delay = ping("8.8.8.8")
-        if delay:
-            samples.append(delay*1000)
+    #for _ in range(6):
+        #delay = ping("8.8.8.8")
+        #if delay:
+            #samples.append(delay*1000)
 
-    if len(samples) > 1:
-        return round(statistics.stdev(samples),2)
+    #if len(samples) > 1:
+        #return round(statistics.stdev(samples),2)
 
-    return 0
-"""
+    #return 0
+
 # ---------------- PACKET LOSS ---------------- #
 
 def packet_loss():
@@ -237,4 +237,5 @@ if st.button("🚀 Run Speed Test"):
 if st.button("🔄 Restart Test"):
 
     st.rerun()
+
 
