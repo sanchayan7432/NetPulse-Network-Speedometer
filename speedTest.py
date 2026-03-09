@@ -4,7 +4,7 @@ import requests
 import psutil
 import time
 import statistics
-from ping3 import ping
+#from ping3 import ping
 import plotly.graph_objects as go
 import subprocess
 import re
@@ -237,3 +237,4 @@ if st.button("🚀 Run Speed Test"):
 if st.button("🔄 Restart Test"):
 
     st.rerun()
+
