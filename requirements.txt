@@ -1,5 +1,5 @@
+streamlit
 speedtest-cli
-psutil
-requests
-matplotlib
-ping3
+plotly
+pandas
+numpy
