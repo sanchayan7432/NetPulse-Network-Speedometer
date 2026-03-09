@@ -3,4 +3,4 @@ speedtest-cli
 plotly
 pandas
 numpy
-ping3
+psutil
